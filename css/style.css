@@ -1,0 +1,118 @@
+/* ===== 1. Biến ===== */
+:root{
+  --ink:#1f2430; --muted:#5b6472; --paper:#f1f4f7; --surface:#fff; --line:#dbe1e8;
+  --red:#c8242b; --red-dark:#a11b21; --green:#17724b; --green-bg:#e6f4ec; --err:#b3261e; --err-bg:#fcebea;
+  --grid:#cfe0f3; --radius:10px; --gap:1rem;
+  --font:"Segoe UI","Helvetica Neue",Roboto,Arial,sans-serif;
+}
+
+/* ===== 2. Nền tảng ===== */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--font);padding-bottom:5.5rem}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,dl,dd,ul{margin:0}
+ul{padding:0;list-style:none}
+h1{font-size:1.6rem;margin:.5rem 0 1rem}
+h2{font-size:1.15rem}
+h3{font-size:1rem;font-weight:600}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--gap)}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid #1b5fd1;outline-offset:2px}
+
+/* ===== 3. Header ===== */
+.site-header{background:var(--surface);border-bottom:1px solid var(--line)}
+.site-header__inner{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;padding-top:.75rem;padding-bottom:.75rem}
+.logo{font-weight:700;color:var(--red);text-decoration:none;font-size:1.1rem}
+.search{flex:1 1 100%;order:3}
+.search input{width:100%;padding:.65rem .9rem;border:1px solid var(--line);border-radius:999px;font:inherit}
+.cart-badge{margin-left:auto;font-weight:600}
+.breadcrumb{font-size:.9rem;color:var(--muted);padding-top:1rem}
+.breadcrumb a{color:inherit}
+
+/* ===== 4. Bố cục ===== */
+.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap)}
+.layout__main{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);align-content:start;min-width:0}
+
+/* ===== 5. Thanh freeship (kẻ ô ly) ===== */
+.freeship{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
+.freeship__title{font-weight:500;margin-bottom:.75rem}
+.freeship__title strong{color:var(--red)}
+.freeship__track{height:18px;border-radius:4px;border:1px solid #b9cde4;overflow:hidden;
+  background-color:#fff;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:9px 9px}
+.freeship__fill{display:block;height:100%;background:var(--green);opacity:.88}
+.freeship__note{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+
+/* ===== 6. Dòng sản phẩm ===== */
+.items{display:grid;gap:.75rem}
+.item{display:grid;grid-template-columns:72px 1fr;gap:.75rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:.75rem}
+.item img{width:72px;height:72px;border-radius:8px;object-fit:contain;background:#eef1f4}
+.item__meta{font-size:.9rem;color:var(--muted)}
+.proof{display:inline-block;margin-top:.35rem;padding:.1rem .55rem;border-radius:999px;background:var(--green-bg);color:var(--green);font-size:.85rem}
+.item__buy{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:.75rem;border-top:1px dashed var(--line);padding-top:.6rem}
+.qty{display:flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--muted)}
+.qty input{width:4.5rem;min-height:44px;padding:.4rem;border:1px solid var(--line);border-radius:8px;font:inherit;text-align:center}
+.item__total{font-weight:700;margin-left:auto}
+.link-btn{min-height:44px;padding:0 .5rem;background:none;border:0;color:var(--red);font:inherit;text-decoration:underline;cursor:pointer}
+
+/* ===== 7. Gợi ý mua kèm ===== */
+.upsell{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
+.upsell h2{margin-bottom:.75rem}
+.upsell__list{display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.25rem}
+.card{flex:0 0 150px;scroll-snap-align:start;display:flex;flex-direction:column;gap:.4rem;border:1px solid var(--line);border-radius:8px;padding:.6rem}
+.card img{width:100%;aspect-ratio:1;object-fit:contain;background:#eef1f4;border-radius:6px}
+.card h3{font-size:.9rem;flex:1}
+.card__price{font-weight:700;color:var(--red)}
+
+/* ===== 8. Tóm tắt đơn + voucher ===== */
+.summary{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;align-content:start}
+.summary__rows{display:grid;gap:.5rem}
+.summary__rows div{display:flex;justify-content:space-between}
+.summary__discount{color:var(--green)}
+.summary__total{border-top:1px solid var(--line);padding-top:.6rem;font-size:1.2rem;font-weight:700}
+.voucher label{display:block;font-weight:600;margin-bottom:.35rem}
+.voucher__row{display:flex;gap:.5rem}
+.voucher__row input{flex:1;min-width:0;min-height:44px;padding:.5rem .75rem;border:1px solid var(--line);border-radius:8px;font:inherit}
+.voucher__msg{font-size:.88rem;margin-top:.5rem;padding:.4rem .6rem;border-radius:6px}
+.voucher__msg--ok{background:var(--green-bg);color:var(--green)}
+.voucher__msg--err{background:var(--err-bg);color:var(--err)}
+.summary__trust{font-size:.85rem;color:var(--muted)}
+
+/* ===== 9. Nút ===== */
+.btn{min-height:44px;padding:.5rem 1rem;border-radius:8px;border:1px solid transparent;font:inherit;font-weight:600;cursor:pointer}
+.btn--primary{background:var(--red);color:#fff}
+.btn--primary:hover{background:var(--red-dark)}
+.btn--dark{background:var(--ink);color:#fff}
+.btn--ghost{background:#fff;border-color:var(--red);color:var(--red)}
+.btn--ghost:hover{background:#fdf0f0}
+.btn--block{width:100%}
+.summary .btn--block{display:none}
+
+/* ===== 10. Thanh thanh toán đáy (điện thoại) và ghi chú ===== */
+.checkout-bar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:.6rem var(--gap) calc(.6rem + env(safe-area-inset-bottom,0px));background:var(--surface);border-top:1px solid var(--line)}
+.demo-note{font-size:.85rem;color:var(--muted);margin:1.5rem 0}
+
+/* ===== 11. Responsive ===== */
+@media (min-width:768px){
+  .search{flex:1;order:0;max-width:420px;margin-left:auto}
+  .cart-badge{margin-left:0}
+  .item{grid-template-columns:96px 1fr auto}
+  .item img{width:96px;height:96px}
+  .item__buy{grid-column:auto;border:0;padding:0;flex-direction:column;align-items:flex-end}
+  .item__total{margin-left:0}
+  .card{flex-basis:calc(25% - .6rem)}
+}
+@media (min-width:1024px){
+  body{padding-bottom:0}
+  .layout{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start}
+  .summary{position:sticky;top:1rem}
+  .summary .btn--block{display:block}
+  .checkout-bar{display:none}
+}
+@media (max-width:360px){
+  .logo{font-size:1rem}
+  .cart-badge{font-size:.9rem}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none}}

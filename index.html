@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giỏ hàng cải tiến - Demo văn phòng phẩm</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="logo" href="#">Văn phòng phẩm Demo</a>
+      <form class="search" role="search">
+        <label class="visually-hidden" for="q">Tìm sản phẩm</label>
+        <input id="q" type="search" placeholder="Tìm vở, bút, sổ...">
+      </form>
+      <span class="cart-badge">Giỏ hàng (3)</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Đường dẫn"><a href="#">Trang chủ</a> / Giỏ hàng</nav>
+    <h1>Giỏ hàng của bạn</h1>
+
+    <div class="layout">
+      <div class="layout__main">
+
+        <!-- CẢI TIẾN 1: thông điệp freeship -->
+        <section class="freeship" aria-labelledby="fs-title">
+          <h2 id="fs-title" class="freeship__title">Mua thêm <strong>78.400 ₫</strong> để được miễn phí vận chuyển</h2>
+          <div class="freeship__track" role="progressbar" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="221600" aria-label="Tiến độ đạt miễn phí vận chuyển">
+            <span class="freeship__fill" style="width:74%"></span>
+          </div>
+          <p class="freeship__note">Đơn từ 300.000 ₫ được miễn phí vận chuyển (mức áp dụng giả định cho bài tập).</p>
+        </section>
+
+        <section aria-labelledby="items-title">
+          <h2 id="items-title" class="visually-hidden">Sản phẩm trong giỏ</h2>
+          <ul class="items">
+            <li class="item">
+              <img src="images/vo.jpg" alt="Vở 4 ô ly 48 trang School Bạn Nhỏ" width="96" height="96">
+              <div class="item__info">
+                <h3>Vở 4 ô ly 48 trang School Bạn Nhỏ</h3>
+                <p class="item__meta">Mã 0509 · 13.000 ₫ / quyển</p>
+                <p class="proof">Hôm qua có 128 người đã mua</p>
+              </div>
+              <div class="item__buy">
+                <label class="qty"><span>Số lượng</span><input type="number" value="10" min="1"></label>
+                <p class="item__total">130.000 ₫</p>
+                <button type="button" class="link-btn">Xóa</button>
+              </div>
+            </li>
+            <li class="item">
+              <img src="images/but-gel.jpg" alt="Bút gel GP01" width="96" height="96">
+              <div class="item__info">
+                <h3>Bút gel GP01 mực xanh 0,5 mm</h3>
+                <p class="item__meta">Mã 2752X · 6.800 ₫ / cây</p>
+                <p class="proof">Hôm qua có 54 người đã mua</p>
+              </div>
+              <div class="item__buy">
+                <label class="qty"><span>Số lượng</span><input type="number" value="5" min="1"></label>
+                <p class="item__total">34.000 ₫</p>
+                <button type="button" class="link-btn">Xóa</button>
+              </div>
+            </li>
+            <li class="item">
+              <img src="images/so-a5.jpg" alt="Sổ bìa bồi A5 Subject" width="96" height="96">
+              <div class="item__info">
+                <h3>Sổ bìa bồi A5 200 trang Subject</h3>
+                <p class="item__meta">Mã 4630XD · 19.200 ₫ / quyển</p>
+                <p class="proof">Hôm qua có 31 người đã mua</p>
+              </div>
+              <div class="item__buy">
+                <label class="qty"><span>Số lượng</span><input type="number" value="3" min="1"></label>
+                <p class="item__total">57.600 ₫</p>
+                <button type="button" class="link-btn">Xóa</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- CẢI TIẾN 3: sản phẩm mua kèm -->
+        <section class="upsell" aria-labelledby="up-title">
+          <h2 id="up-title">Mua kèm cho đủ bộ</h2>
+          <ul class="upsell__list">
+            <li class="card">
+              <img src="images/boc-decal.jpg" alt="Bọc decal vở, sách" width="160" height="160">
+              <h3>Bọc decal vở, sách (10 chiếc)</h3>
+              <p class="card__price">28.300 ₫</p>
+              <button type="button" class="btn btn--ghost">Thêm vào giỏ</button>
+            </li>
+            <li class="card">
+              <img src="images/but-chi.jpg" alt="Bút chì gỗ HB có tẩy" width="160" height="160">
+              <h3>Bút chì gỗ HB có tẩy</h3>
+              <p class="card__price">2.700 ₫</p>
+              <button type="button" class="btn btn--ghost">Thêm vào giỏ</button>
+            </li>
+            <li class="card">
+              <img src="images/giay-kiem-tra.jpg" alt="Giấy kiểm tra 4 ô ly" width="160" height="160">
+              <h3>Giấy kiểm tra 4 ô ly (15 tờ)</h3>
+              <p class="card__price">16.000 ₫</p>
+              <button type="button" class="btn btn--ghost">Thêm vào giỏ</button>
+            </li>
+            <li class="card">
+              <img src="images/but-da-quang.jpg" alt="Bút dạ quang Pastel" width="160" height="160">
+              <h3>Bút dạ quang Pastel HH01</h3>
+              <p class="card__price">2.500 ₫</p>
+              <button type="button" class="btn btn--ghost">Thêm vào giỏ</button>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="summary" aria-labelledby="sum-title">
+        <h2 id="sum-title">Tóm tắt đơn hàng</h2>
+        <dl class="summary__rows">
+          <div><dt>Tạm tính</dt><dd>221.600 ₫</dd></div>
+          <div><dt>Phí vận chuyển</dt><dd>30.000 ₫</dd></div>
+          <div class="summary__discount"><dt>Giảm giá (GIAM10K)</dt><dd>−10.000 ₫</dd></div>
+          <div class="summary__total"><dt>Tổng cộng</dt><dd>241.600 ₫</dd></div>
+        </dl>
+
+        <!-- CẢI TIẾN 2: ô mã giảm giá -->
+        <form class="voucher">
+          <label for="voucher">Mã giảm giá</label>
+          <div class="voucher__row">
+            <input id="voucher" type="text" value="GIAM10K" autocomplete="off">
+            <button type="button" class="btn btn--dark">Áp dụng</button>
+          </div>
+          <p class="voucher__msg voucher__msg--ok" role="status">✓ Đã áp dụng mã GIAM10K, giảm 10.000 ₫.</p>
+          <p class="voucher__msg voucher__msg--err">✕ Mẫu lỗi: Mã đã hết hạn. Hãy kiểm tra lại mã hoặc thử mã khác.</p>
+        </form>
+
+        <button type="button" class="btn btn--primary btn--block">Thanh toán</button>
+        <p class="summary__trust">Giao hàng nhanh · Sản phẩm chính hãng · Đổi trả theo chính sách cửa hàng</p>
+      </aside>
+    </div>
+
+    <p class="demo-note">Trang minh họa cho bài tập. Số liệu "người đã mua", mức freeship và mã giảm giá là dữ liệu mẫu.</p>
+  </main>
+
+  <div class="checkout-bar">
+    <p>Tổng cộng <strong>241.600 ₫</strong></p>
+    <button type="button" class="btn btn--primary">Thanh toán</button>
+  </div>
+</body>
+</html>

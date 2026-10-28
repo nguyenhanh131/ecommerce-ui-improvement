@@ -22,7 +22,22 @@ h3{font-size:1rem;font-weight:600}
 /* ===== 3. Header ===== */
 .site-header{background:var(--surface);border-bottom:1px solid var(--line)}
 .site-header__inner{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;padding-top:.75rem;padding-bottom:.75rem}
-.logo{font-weight:700;color:var(--red);text-decoration:none;font-size:1.1rem}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
 .search{flex:1 1 100%;order:3}
 .search input{width:100%;padding:.65rem .9rem;border:1px solid var(--line);border-radius:999px;font:inherit}
 .cart-badge{margin-left:auto;font-weight:600}
@@ -56,28 +71,234 @@ h3{font-size:1rem;font-weight:600}
 .item__total{font-weight:700;margin-left:auto}
 .link-btn{min-height:44px;padding:0 .5rem;background:none;border:0;color:var(--red);font:inherit;text-decoration:underline;cursor:pointer}
 
-/* ===== 7. Gợi ý mua kèm ===== */
-.upsell{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
-.upsell h2{margin-bottom:.75rem}
-.upsell__list{display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.25rem}
-.card{flex:0 0 150px;scroll-snap-align:start;display:flex;flex-direction:column;gap:.4rem;border:1px solid var(--line);border-radius:8px;padding:.6rem}
-.card img{width:100%;aspect-ratio:1;object-fit:contain;background:#eef1f4;border-radius:6px}
-.card h3{font-size:.9rem;flex:1}
-.card__price{font-weight:700;color:var(--red)}
 
-/* ===== 8. Tóm tắt đơn + voucher ===== */
-.summary{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;align-content:start}
-.summary__rows{display:grid;gap:.5rem}
-.summary__rows div{display:flex;justify-content:space-between}
-.summary__discount{color:var(--green)}
-.summary__total{border-top:1px solid var(--line);padding-top:.6rem;font-size:1.2rem;font-weight:700}
-.voucher label{display:block;font-weight:600;margin-bottom:.35rem}
-.voucher__row{display:flex;gap:.5rem}
-.voucher__row input{flex:1;min-width:0;min-height:44px;padding:.5rem .75rem;border:1px solid var(--line);border-radius:8px;font:inherit}
-.voucher__msg{font-size:.88rem;margin-top:.5rem;padding:.4rem .6rem;border-radius:6px}
-.voucher__msg--ok{background:var(--green-bg);color:var(--green)}
-.voucher__msg--err{background:var(--err-bg);color:var(--err)}
-.summary__trust{font-size:.85rem;color:var(--muted)}
+
+/* ===== 7. Gợi ý mua kèm - Thực hành CSS Grid ===== */
+
+/* Khu vực mua kèm */
+.upsell {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  min-width: 0;
+}
+
+/* Tiêu đề khu vực */
+.upsell h2 {
+  font-size: 1.15rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* CSS Grid: bố trí các sản phẩm thành nhiều cột */
+.upsell__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Thẻ sản phẩm */
+.upsell .card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  transition: border-color 0.2s ease;
+}
+
+/* Hình ảnh: giữ tỷ lệ, hiển thị trọn sản phẩm */
+.upsell .card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
+  background: #f5f6f8;
+  border-radius: 8px;
+}
+
+/* Tên sản phẩm */
+.upsell .card h3 {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Giá sản phẩm */
+.upsell .card__price {
+  margin: auto 0 0;
+  padding-top: 0.25rem;
+  color: var(--red);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Nút thêm vào giỏ */
+.upsell .card .btn {
+  width: 100%;
+  min-height: 40px;
+  padding: 0.45rem 0.35rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+/* Hiệu ứng khi tương tác */
+.upsell .card:hover {
+  border-color: var(--red);
+}
+
+.upsell .card .btn--ghost:hover {
+  background: #fdf0f0;
+}
+
+.upsell .card .btn:focus-visible {
+  outline: 3px solid #1b5fd1;
+  outline-offset: 2px;
+}
+
+/* Màn hình từ 480px: có thể hiển thị 3 cột */
+@media (min-width: 480px) {
+  .upsell__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Màn hình rộng: hiển thị 4 cột */
+@media (min-width: 768px) {
+  .upsell__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Tôn trọng cài đặt giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  .upsell .card {
+    transition: none;
+  }
+}
+
+
+
+/* ===== 8. Tóm tắt đơn hàng ===== */
+.summary {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+/* Tiêu đề */
+.summary h2 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Danh sách thông tin đơn hàng */
+.summary__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* Mỗi dòng gồm tên khoản phí và số tiền */
+.summary__rows div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Giữ các giá trị tiền tệ gọn gàng */
+.summary__rows dd {
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Khoản giảm giá */
+.summary__discount {
+  color: var(--green);
+}
+
+/* Dòng tổng cộng */
+.summary__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.summary__total dd {
+  color: var(--red);
+  font-size: 1.3rem;
+}
+
+/* Phần nhập voucher */
+.voucher label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.voucher__row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+
+.voucher__row input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.voucher__msg {
+  font-size: 0.88rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 6px;
+}
+
+.voucher__msg--ok {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.voucher__msg--err {
+  background: var(--err-bg);
+  color: var(--err);
+}
+
+.summary__trust {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 
 /* ===== 9. Nút ===== */
 .btn{min-height:44px;padding:.5rem 1rem;border-radius:8px;border:1px solid transparent;font:inherit;font-weight:600;cursor:pointer}

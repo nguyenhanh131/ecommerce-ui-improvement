@@ -1,5 +1,12 @@
 # AI Usage Log
+## Mục lục
 
+- [Buổi 1](#buoi-1)
+- [Buổi 2](#buoi-2)
+
+---
+
+<a id="buoi-1"></a>
 ## 1. Công cụ AI
 Tên công cụ: Claude (Anthropic).
 
@@ -58,3 +65,87 @@ Các prompt chính (đã rút gọn, nội dung đầy đủ nằm trong bài t�
 - `.freeship__track` dùng `linear-gradient` làm nền kẻ ô ly cho thanh tiến trình.
 - `object-fit: contain` và `aspect-ratio`: giữ tỷ lệ ảnh và hiện đủ ảnh trong khung.
 - `:focus-visible` và `min-height: 44px` cho nút: hỗ trợ bàn phím và dễ bấm trên điện thoại.
+
+---
+
+<a id="buoi-2"></a>
+### B2-HH-01 – Lập kế hoạch triển khai giao diện
+
+- **Công cụ:** ChatGPT
+- **Bước đề bài:** Xác định khu vực giao diện cần cải tiến và lựa chọn kỹ thuật HTML5/CSS3.
+- **Mục đích:** Lập kế hoạch thực hiện các nhiệm vụ của Buổi 2.
+
+**Prompt (dạng rút gọn)**
+
+> Phân tích giao diện giỏ hàng hiện tại và đề xuất kế hoạch cải tiến, xác định các khu vực cần chỉnh sửa cùng kỹ thuật HTML5/CSS3 phù hợp.
+
+### B2-HH-02 – Cải thiện cấu trúc HTML5
+
+- **Công cụ:** ChatGPT
+- **Bước đề bài:** Rà soát cấu trúc HTML và các trường nhập số lượng sản phẩm.
+- **Mục đích:** Sử dụng phần tử ngữ nghĩa và cải thiện khả năng truy cập.
+
+**Prompt (dạng rút gọn)**
+
+> Kiểm tra và cải thiện cấu trúc HTML5 của trang giỏ hàng. Sử dụng phần tử ngữ nghĩa phù hợp và bổ sung label liên kết với các trường nhập số lượng sản phẩm.
+
+### B2-HH-03 – Thực hành CSS Selector và Box Model
+
+- **Công cụ:** ChatGPT
+- **Bước đề bài:** Điều chỉnh giao diện các thẻ sản phẩm trong khu vực mua kèm.
+- **Mục đích:** Thực hành CSS Selector và Box Model để kiểm soát khoảng cách, đường viền và bố cục.
+
+**Prompt (dạng rút gọn)**
+
+> Viết CSS sử dụng class selector, descendant selector và Box Model để cải thiện giao diện các thẻ sản phẩm trong khu vực “Mua kèm cho đủ bộ”.
+
+### B2-HH-04 – Ứng dụng Flexbox cho tóm tắt đơn hàng
+
+- **Công cụ:** ChatGPT
+- **Bước đề bài:** Chỉnh sửa bố cục phần tóm tắt đơn hàng và khu vực nhập mã giảm giá.
+- **Mục đích:** Thực hành Flexbox để căn chỉnh các thành phần giao diện.
+
+**Prompt (dạng rút gọn)**
+
+> Áp dụng Flexbox để căn chỉnh các dòng thông tin trong phần tóm tắt đơn hàng và bố trí ô nhập mã giảm giá cùng nút áp dụng. Giữ giao diện đơn giản, dễ đọc và nhất quán.
+
+### B2-HH-05 – Ứng dụng CSS Grid cho sản phẩm mua kèm
+
+- **Công cụ:** ChatGPT
+- **Bước đề bài:** Chuyển danh sách sản phẩm mua kèm sang bố cục dạng lưới.
+- **Mục đích:** Thực hành CSS Grid và thiết kế giao diện responsive.
+
+**Prompt (dạng rút gọn)**
+
+> Chuyển khu vực “Mua kèm cho đủ bộ” từ Flexbox sang CSS Grid. Sử dụng grid-template-columns, repeat(), minmax() và gap để hiển thị sản phẩm theo nhiều cột tùy kích thước màn hình.
+
+### B2-HH-06 – Bổ sung hiệu ứng Hover và Focus
+
+- **Công cụ:** ChatGPT
+- **Bước đề bài:** Cải thiện phản hồi trực quan của nút “Thêm vào giỏ”.
+- **Mục đích:** Thực hành pseudo-class, transition và hỗ trợ điều hướng bằng bàn phím.
+
+**Prompt (dạng rút gọn)**
+
+> Bổ sung hiệu ứng :hover, :focus-visible và transition cho nút “Thêm vào giỏ”. Giữ hiệu ứng tinh tế và bổ sung prefers-reduced-motion để hạn chế chuyển động khi cần.
+
+### B2-HH-07 – Hoàn thiện Header và nhận diện thương hiệu
+
+- **Công cụ:** ChatGPT
+- **Bước đề bài:** Điều chỉnh Header để hiển thị logo và tên thương hiệu.
+- **Mục đích:** Cải thiện nhận diện thương hiệu và căn chỉnh các thành phần trên Header.
+
+**Prompt (dạng rút gọn)**
+
+> Điều chỉnh Header để hiển thị logo bên cạnh tên “Văn phòng phẩm HH”. Sử dụng Flexbox để căn chỉnh logo và chữ, đồng thời giữ bố cục tìm kiếm và giỏ hàng hiện có.
+
+---
+
+## Ghi chú kiểm tra kết quả
+
+- Đối chiếu mã AI đề xuất với cấu trúc HTML và CSS hiện tại.
+- Chạy website bằng trình duyệt hoặc Live Server.
+- Kiểm tra bố cục trên nhiều kích thước màn hình.
+- Kiểm tra hiệu ứng hover bằng chuột và focus bằng bàn phím.
+- Điều chỉnh những đề xuất chưa phù hợp với giao diện thực tế.
+- AI hỗ trợ giải thích và đề xuất mã nguồn; kết quả được kiểm tra, điều chỉnh thủ công.
